@@ -1,0 +1,5 @@
+/* Tổng thể */
+body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; }
+.navbar { background-color: #fff; border-bottom: 1px solid #dee2e6; padding: 10px 0; }
+.navbar-brand { font-weight: bold; color: #000; }
+.card { border: none; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
