@@ -3,59 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sản phẩm - Mobile Store</title>
+    <title>Danh sách sản phẩm - Mobile Store</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body class="pt-5 mt-4">
+<body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="../index.html">
-                <i class="fa-solid fa-mobile-button me-2 brand-icon"></i>
-                <span class="brand-text">Mobile Store</span>
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="../index.html">
+                <img src="../assets/logo.jpeg" alt="Logo" class="me-2" style="height: 35px; width: auto; object-fit: contain;">
+                Mobile Store
             </a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Trang chủ</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="san-pham.html">Sản phẩm</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gioi-thieu.html">Giới thiệu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="lien-he.html">Liên hệ</a></li>
-                    
-                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
-                        <a class="nav-link cart-btn text-white d-flex align-items-center" href="gio-hang.html">
-                            <i class="fa-solid fa-shopping-cart me-2"></i> Giỏ hàng 
-                            <span id="cart-count" class="badge bg-white text-orange rounded-pill ms-2">0</span>
-                        </a>
-                    </li>
-                </ul>
+                <div class="navbar-nav align-items-center">
+                    <a class="nav-link px-3" href="../index.html">Trang chủ</a>
+                    <a class="nav-link px-3 active fw-bold text-primary" href="san-pham.html">Sản phẩm</a>
+                    <a class="nav-link px-3" href="gioi-thieu.html">Giới thiệu</a>
+                    <a class="nav-link px-3" href="lien-he.html">Liên hệ</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="container mt-5 pt-4">
-        <h2 class="fw-bold mb-4" style="color: var(--text-main); letter-spacing: -1px;">Danh sách sản phẩm</h2>
-
-        <div id="product-list" class="row g-4 mb-5">
+    <div class="container" style="margin-top: 100px; margin-bottom: 50px;">
+        <h3 class="fw-bold text-dark mb-4"><i class="fa-solid fa-mobile-screen-button text-primary me-2"></i>Tất cả sản phẩm</h3>
+        <div id="product-list" class="row">
             </div>
     </div>
 
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container text-center text-muted">
+            <p class="mb-1 fw-bold">© 2026 Mobile Store - Website Điện Thoại Di Động</p>
+            <p class="mb-0 small">
+                <strong>Sinh viên thực hiện:</strong> Nguyễn Quang Huy (MSSV: 110124073) | 
+                <strong>Lớp:</strong> DA24TTC | 
+                <strong>Môn:</strong> Thiết kế Web | 
+                <strong>GVHD:</strong> Nguyễn Ngọc Đan Thanh
+            </p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof renderProducts === 'function') {
-                renderProducts();
-            }
-        });
-    </script>
 </body>
 </html>
