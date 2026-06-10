@@ -1,7 +1,11 @@
-/* Đảm bảo navbar không đè nội dung và căn chỉnh chung */
+html, body {
+    height: 100%;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .navbar-nav .nav-link {
     transition: color 0.2s ease-in-out;
@@ -15,26 +19,22 @@ body {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
-
 }
-.footer {
-    background-color: #f8f9fa;
+.footer-custom {
+    background-color: white;
+    border-top: 1px solid #dee2e6;
     padding: 20px 0;
     text-align: center;
-    border-top: 1px solid #e7e7e7;      
+    margin-top: auto;
 }
-.footer p {
-    margin: 0;
-    color: #6c757d;
-}           
 .navbar-brand {
-    display: flex;              
-}   
+    display: flex;
+}
 .navbar-brand img {
     height: 35px;
     width: auto;
     object-fit: contain;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 h2.mb-4.fw-bold.text-dark {
     text-align: center;
@@ -54,13 +54,76 @@ h2.mb-4.fw-bold.text-dark::after {
     border-radius: 2px;
 }
 .container form {
-    margin: 0 auto; 
-}
-.container .p-4.p-md-5.bg-white.border.rounded {
-    max-width: 800px; 
-    margin: 0 auto;   
+    margin: 0 auto;
 }
 .form-control {
     border-radius: 8px;
     padding: 10px 15px;
+}
+.khoi-chinh {
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+.khoi-san-pham {
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+.khoi-noi-dung {
+    margin-top: 120px;
+    margin-bottom: 40px;
+}
+.logo-anh {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+.gioi-thieu-noi-dung {
+    padding: 1.5rem 3rem;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+    color: #212529;
+    line-height: 1.8;
+}
+.gioi-thieu-noi-dung p {
+    margin-bottom: 1rem;
+}
+.form-lien-he {
+    padding: 2rem;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-radius: 0.375rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+    max-width: 600px;
+}
+.nhan-de-form {
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 5px;
+}
+.hinh-san-pham {
+    height: 180px;
+    overflow: hidden;
+}
+.anh-san-pham {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+.anh-chi-tiet {
+    max-height: 400px;
+    object-fit: contain;
+    width: 100%;
+}
+.khoa-thong-so {
+    width: 40%;
+}
+.mo-ta-san-pham {
+    line-height: 1.6;
+}
+@media (min-width: 768px) {
+    .gioi-thieu-noi-dung {
+        padding: 3rem;
+    }
 }
