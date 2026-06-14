@@ -11,6 +11,8 @@ var danhSachSanPham = [
     { id: "7", name: "Vivo V30 5G", price: 8990000, image: "assets/images/dt9.jpg", desc: "Chuyên gia selfie với thiết kế mỏng nhẹ.", specs: { "CPU": "Snapdragon 7 Gen 3", "RAM": "8GB", "Camera": "50MP", "Pin": "5000mAh" } },
     { id: "8", name: "Realme 12 Pro+", price: 7990000, image: "assets/images/dt10.jpg", desc: "Camera tele tiềm vọng tầm trung đầu tiên.", specs: { "CPU": "Snapdragon 7s Gen 2", "RAM": "8GB", "Camera": "64MP", "Pin": "5000mAh" } }
 ];
+
+// Hàm hiển thị TOÀN BỘ sản phẩm ở trang san-pham.html
 function hienThiSanPham() {
     var phanDanhSach = document.getElementById('product-list');
     if (!phanDanhSach) return;
@@ -21,6 +23,21 @@ function hienThiSanPham() {
     }
     phanDanhSach.innerHTML = html;
 }
+
+// Hàm bổ sung: Chỉ hiển thị ĐÚNG 4 SẢN PHẨM đầu tiên ở trang chủ index.html
+function hienThiSanPhamNoiBat() {
+    var phanNoiBat = document.getElementById('product-featured');
+    if (!phanNoiBat) return;
+    var html = '';
+    // Giới hạn vòng lặp chạy tối đa 4 lần
+    var soLuong = danhSachSanPham.length > 4 ? 4 : danhSachSanPham.length;
+    for (var i = 0; i < soLuong; i++) {
+        var sanPham = danhSachSanPham[i];
+        html += '\n        <div class="col-6 col-md-4 col-lg-3 mb-4">\n            <div class="card h-100 border p-2 shadow-sm bg-white rounded">\n                <div class="hinh-san-pham d-flex align-items-center justify-content-center">\n                    <img src="' + duongDanAnh + sanPham.image + '" class="card-img-top pt-2 anh-san-pham" alt="' + sanPham.name + '">\n                </div>\n                <div class="card-body d-flex flex-column p-2">\n                    <h5 class="fs-6 fw-bold text-dark text-truncate" title="' + sanPham.name + '">' + sanPham.name + '</h5>\n                    <p class="text-danger fw-bold mb-3 small">' + sanPham.price.toLocaleString('vi-VN') + 'đ</p>\n                    <a href="' + duongDanLienKet + 'chi-tiet.html?id=' + sanPham.id + '" class="btn btn-outline-primary btn-sm w-100 mt-auto">Chi tiết</a>\n                </div>\n            </div>\n        </div>';
+    }
+    phanNoiBat.innerHTML = html;
+}
+
 function hienThiChiTiet() {
     var phanChiTiet = document.getElementById('product-detail');
     if (!phanChiTiet) return;
@@ -43,6 +60,7 @@ function hienThiChiTiet() {
     }
     phanChiTiet.innerHTML = '\n            <div class="col-md-6 mb-4 text-center">\n                <img src="' + duongDanAnh + sanPham.image + '" class="img-fluid rounded border p-3 bg-white shadow-sm anh-chi-tiet" alt="' + sanPham.name + '">\n            </div>\n            <div class="col-md-6">\n                <h1 class="fw-bold h2 text-dark">' + sanPham.name + '</h1>\n                <h3 class="text-danger my-3 fw-bold">' + sanPham.price.toLocaleString('vi-VN') + 'đ</h3>\n                <p class="text-muted mo-ta-san-pham">' + sanPham.desc + '</p>\n                <button class="btn btn-primary btn-lg px-4 mb-4 fw-bold" onclick="hienThongBao(\'' + sanPham.id + '\')">Đăng ký mua</button>\n                <h5 class="mt-2 fw-bold">Thông số kỹ thuật</h5>\n                <table class="table table-bordered mt-2">\n                    <tbody>' + hangThongSo + '</tbody>\n                </table>\n            </div>';
 }
+
 function hienThongBao(id) {
     var sanPham = null;
     for (var i = 0; i < danhSachSanPham.length; i++) {
@@ -55,7 +73,9 @@ function hienThongBao(id) {
         alert('Cảm ơn bạn đã quan tâm! Hệ thống đã ghi nhận yêu cầu mua sản phẩm: ' + sanPham.name + '. Chúng tôi sẽ liên hệ lại sau.');
     }
 }
+
 document.addEventListener('DOMContentLoaded', function() {
     hienThiSanPham();
+    hienThiSanPhamNoiBat(); // Gọi thêm hàm hiển thị 4 sản phẩm nổi bật
     hienThiChiTiet();
 });

@@ -8,37 +8,55 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-light">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm fixed-top">
+<body class="bg-light-custom">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-blur fixed-top">
         <div class="container">
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+            <a class="navbar-brand fw-bold d-flex align-items-center dynamic-logo" href="index.html">
                 <img src="assets/logo.jpeg" alt="Logo" class="me-2 logo-anh">
-                <span>Mobile Store</span>
+                <span class="gradient-text">Mobile Store</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <div class="navbar-nav align-items-center">
-                    <a class="nav-link px-3 active fw-bold text-primary" href="index.html">Trang chủ</a>
-                    <a class="nav-link px-3" href="html/san-pham.html">Sản phẩm</a>
-                    <a class="nav-link px-3" href="html/gioi-thieu.html">Giới thiệu</a>
-                    <a class="nav-link px-3" href="html/lien-he.html">Liên hệ</a>
+                <div class="navbar-nav align-items-center gap-2">
+                    <a class="nav-link nav-link-custom px-3 active fw-bold text-primary" href="index.html">Trang chủ</a>
+                    <a class="nav-link nav-link-custom px-3" href="html/san-pham.html">Sản phẩm</a>
+                    <a class="nav-link nav-link-custom px-3" href="html/gioi-thieu.html">Giới thiệu</a>
+                    <a class="nav-link nav-link-custom px-3" href="html/lien-he.html">Liên hệ</a>
                 </div>
             </div>
         </div>
     </nav>
+
     <div class="container khoi-chinh flex-grow-1">
-        <div class="p-5 bg-dark text-white rounded-3 shadow-sm text-center">
-            <h1 class="display-4 fw-bold mb-3">Chào mừng đến với Mobile Store</h1>
-            <p class="fs-5 text-secondary mb-4">Hệ thống bán lẻ điện thoại chính hãng hàng đầu Việt Nam</p>
-            <a href="html/san-pham.html" class="btn btn-primary btn-lg px-5 fw-bold">Xem danh sách sản phẩm ngay</a>
+        
+        <div class="modern-shadow rounded-4 overflow-hidden mb-5 p-5 text-center position-relative" style="min-height: 360px; background: linear-gradient(135deg, #0f172a, #1e293b, #334155);">
+            <div class="position-absolute top-50 start-50 translate-middle w-100 px-3">
+                <span class="badge bg-soft-danger mb-3 px-3 py-2 text-uppercase fw-bold tracking-wider">Siêu Đột Phá 2026</span>
+                <h1 class="display-4 fw-extrabold text-white mb-2">Chào mừng đến với Mobile Store</h1>
+                <p class="fs-5 text-light opacity-75 mb-4">Hệ thống bán lẻ điện thoại chính hãng hàng đầu Việt Nam</p>
+                <a href="html/san-pham.html" class="btn btn-gradient btn-lg px-5 fw-bold shadow-lg rounded-pill">Khám Phá Ngay <i class="fa-solid fa-arrow-right ms-2 fs-6"></i></a>
+            </div>
         </div>
+
+        <div class="mb-5">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="fw-bold text-dark m-0 d-flex align-items-center">
+                    <span class="live-pulse me-2"></span>Sản phẩm nổi bật
+                </h3>
+                <a href="html/san-pham.html" class="btn btn-modern-outline btn-sm fw-bold px-3 rounded-pill">Xem tất cả <i class="fa-solid fa-angle-right ms-1"></i></a>
+            </div>
+            <div id="product-featured" class="row"></div>
+        </div>
+
     </div>
-    <footer class="footer-custom">
+
+    <footer class="footer-custom mt-5">
         <div class="container text-center text-muted">
-            <p class="mb-1 fw-bold">© 2026 Mobile Store - Website Điện Thoại Di Động</p>
-            <p class="mb-0 small">
+            <p class="mb-1 fw-bold text-dark">© 2026 Mobile Store - Website Điện Thoại Di Động</p>
+            <p class="mb-0 small text-secondary">
                 <strong>Sinh viên thực hiện:</strong> Nguyễn Quang Huy (MSSV: 110124073) | 
                 <strong>Lớp:</strong> DA24TTC | 
                 <strong>Môn:</strong> Thiết kế Web | 
@@ -46,6 +64,7 @@
             </p>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>

@@ -1,40 +1,139 @@
+/* --- HỆ THỐNG GIAO DIỆN HIỆN ĐẠI --- */
+:root {
+    --primary-gradient: linear-gradient(135deg, #0d6efd, #4f46e5);
+    --bg-light: #f8fafc;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --hover-shadow: 0 20px 25px -5px rgba(13, 110, 253, 0.15), 0 10px 10px -6px rgba(13, 110, 253, 0.1);
+}
+
 html, body {
     height: 100%;
 }
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
-.navbar-nav .nav-link {
-    transition: color 0.2s ease-in-out;
+.bg-light-custom {
+    background-color: var(--bg-light);
 }
-.navbar-nav .nav-link:hover {
+
+/* Thanh Menu mờ kính cường lực (Glassmorphism) */
+.bg-blur {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+.nav-link-custom {
+    font-weight: 500;
+    color: #475569 !important;
+    border-radius: 20px;
+    transition: all 0.25s ease;
+}
+.nav-link-custom:hover, .nav-link-custom.active {
     color: #0d6efd !important;
+    background-color: rgba(13, 110, 253, 0.08);
 }
+
+/* Chữ đổ màu Gradient */
+.gradient-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.btn-gradient {
+    background: var(--primary-gradient);
+    color: white !important;
+    border: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.btn-gradient:hover {
+    transform: scale(1.02);
+    opacity: 0.95;
+}
+
+/* Bo góc & bóng mờ đổ theo chuẩn UI/UX mới */
+.modern-shadow {
+    box-shadow: var(--card-shadow) !important;
+}
+.bg-glass {
+    background-color: white;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* Hộp icon tròn trịa */
+.icon-box {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.bg-soft-primary { background-color: rgba(13, 110, 253, 0.1); }
+.bg-soft-success { background-color: rgba(25, 135, 84, 0.1); }
+.bg-soft-warning { background-color: rgba(255, 193, 7, 0.1); }
+.bg-soft-danger { background-color: rgba(220, 53, 69, 0.2); color: #dc3545; }
+
+/* Hiệu ứng hover cho các Box dịch vụ */
+.dynamic-hover {
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.dynamic-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--hover-shadow) !important;
+    background: white;
+}
+
+/* --- TỐI ƯU CARD SẢN PHẨM ĐỔ TỪ JAVASCRIPT --- */
 .card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 16px !important;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
 }
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08) !important;
+    border-color: #0d6efd !important;
 }
+.card .btn-outline-primary {
+    border-radius: 20px;
+    font-weight: 600;
+    border-width: 1.5px;
+}
+
+/* Chấm tròn nhấp nháy "Live" kế bên chữ Sản phẩm nổi bật */
+.live-pulse {
+    width: 10px;
+    height: 10px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    animation: pulse 1.6s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+/* --- TOÀN BỘ CSS GỐC CỦA CẬU ĐƯỢC GIỮ LẠI VÀ LÀM SẠCH --- */
 .footer-custom {
     background-color: white;
-    border-top: 1px solid #dee2e6;
-    padding: 20px 0;
+    border-top: 1px solid #e2e8f0;
+    padding: 25px 0;
     text-align: center;
     margin-top: auto;
-}
-.navbar-brand {
-    display: flex;
 }
 .navbar-brand img {
     height: 35px;
     width: auto;
     object-fit: contain;
-    margin-right: 10px;
 }
 h2.mb-4.fw-bold.text-dark {
     text-align: center;
@@ -53,23 +152,12 @@ h2.mb-4.fw-bold.text-dark::after {
     background-color: #0d6efd;
     border-radius: 2px;
 }
-.container form {
-    margin: 0 auto;
-}
 .form-control {
     border-radius: 8px;
     padding: 10px 15px;
 }
-.khoi-chinh {
-    margin-top: 120px;
-    margin-bottom: 40px;
-}
-.khoi-san-pham {
-    margin-top: 120px;
-    margin-bottom: 40px;
-}
-.khoi-noi-dung {
-    margin-top: 120px;
+.khoi-chinh, .khoi-san-pham, .khoi-noi-dung {
+    margin-top: 100px;
     margin-bottom: 40px;
 }
 .logo-anh {
@@ -82,19 +170,16 @@ h2.mb-4.fw-bold.text-dark::after {
     background-color: white;
     border: 1px solid #dee2e6;
     border-radius: 0.375rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+    box-shadow: var(--card-shadow);
     color: #212529;
     line-height: 1.8;
-}
-.gioi-thieu-noi-dung p {
-    margin-bottom: 1rem;
 }
 .form-lien-he {
     padding: 2rem;
     background-color: white;
     border: 1px solid #dee2e6;
-    border-radius: 0.375rem;
-    box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,.075);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
     max-width: 600px;
 }
 .nhan-de-form {
@@ -122,8 +207,18 @@ h2.mb-4.fw-bold.text-dark::after {
 .mo-ta-san-pham {
     line-height: 1.6;
 }
+.max-width-container {
+    max-width: 800px;
+}
+.btn-modern-outline {
+    border: 1.5px solid #0d6efd;
+    color: #0d6efd;
+    transition: all 0.2s ease;
+}
+.btn-modern-outline:hover {
+    background-color: #0d6efd;
+    color: white;
+}
 @media (min-width: 768px) {
-    .gioi-thieu-noi-dung {
-        padding: 3rem;
-    }
+    .gioi-thieu-noi-dung { padding: 3rem; }
 }
